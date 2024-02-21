@@ -1,0 +1,36 @@
+.modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    bottom: 0;
+}
+
+.card{
+    opacity: 1;
+    background-color: var(--background);
+    width: 30rem;
+    min-height: 22.25rem;
+    border-radius: var(--rounded-2xl);
+}
+
+#content_closeModal{
+    display: flex;
+    justify-content: end;
+}
+
+#closeModal{
+    border: 0;
+    background-color: var(--background);
+    font-size: var(--font-2xl);
+    margin-right: 1rem;
+    margin-top: 1rem;
+}
+
+.modal--hidden{
+    display: none;
+}

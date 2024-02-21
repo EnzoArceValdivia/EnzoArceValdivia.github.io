@@ -1,0 +1,85 @@
+body {
+  font-family: var(--text);
+  color: var(--foreground);
+  background-color: var(--background);
+  font-size: var(--font-base);
+  line-height: var(--leading-6);
+  accent-color: var(--primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading);
+}
+
+code {
+  font-family: var(--monospace);
+}
+
+hr {
+  margin-block: 36px;
+  border: none;
+  border-top: 3px solid var(--border);
+}
+
+:focus {
+  outline-offset: 4px;
+  outline-color: var(--ring);
+  outline-width: 2px;
+}
+
+/* Form Elements */
+
+label {
+  color: var(--foreground);
+  font-size: var(--font-sm);
+  font-weight: 500;
+  line-height: var(--leading-none);
+}
+
+input:not([type="radio"], [type="checkbox"]),
+select,
+textarea {
+  width: 100%;
+  height: var(--spacing-10);
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--rounded-md);
+  border: 1px solid var(--border);
+  background: var(--background);
+
+  color: var(--foreground);
+  font-size: var(--font-sm);
+  line-height: var(--leading-6);
+}
+
+textarea {
+  height: unset;
+}
+
+input:disabled,
+select:disabled,
+textarea:disabled {
+  opacity: 0.5;
+}
+
+input::placeholder,
+select::placeholder,
+textarea::placeholder {
+  color: var(--muted-foreground);
+}
+
+input::file-selector-button {
+  padding: 0 var(--spacing-1);
+  border: none;
+  background-color: transparent;
+  border-radius: var(--rounded);
+
+  color: var(--foreground);
+  font-size: inherit;
+  font-weight: 500;
+  line-height: inherit;
+}

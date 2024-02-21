@@ -1,0 +1,34 @@
+/*
+<div class="author">
+  <img src="" class="author__avatar"/>
+  <div class="author__info">
+    <strong class="author_name">Micaela Bolognesi</strong>
+    <span>Frontend Developer - Vsale</span>
+  </div>
+</div>
+*/
+
+.author {
+  display: flex;
+  gap: 16px;
+}
+
+.author__avatar {
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.author__info {
+  font-size: var(--font-sm);
+  line-height: var(--leading-6);
+}
+
+.author__info > * {
+  display: block;
+}
+
+.author_name {
+  font-weight: 600;
+}

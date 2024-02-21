@@ -1,0 +1,79 @@
+/*
+<header class="header container">
+  <h1 class="header__logo"><a href="">Logo</a></h1>
+  <nav class="header__navigation navigation">...</nav>
+  <div class="header__actions">...</div>
+  <button class="header__menu-icon button button--icon button--outline">
+    <svg>...</svg>
+  </button>
+</header>
+*/
+
+.header {
+  width: 100%;
+  height: var(--spacing-24);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  background-color: rgb(6, 6, 113);
+  /*background-color: var(--background);*/
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header__logo {
+  color: var(--primary);
+  font-family: var(--display);
+  font-size: var(--font-3xl);
+  font-weight: 500;
+  line-height: var(--leading-none);
+}
+
+.header__logo a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  transition: color 300ms;
+}
+
+.header__logo a:hover {
+  color: var(--primary-hover);
+}
+
+.header__navigation {
+  position: absolute;
+  top: 75px;
+  background-color: rgb(6, 6, 113);
+  right: 0;
+  left: 0;
+  padding-block: var(--spacing-4);
+}
+
+.header__actions {
+  display: none;
+}
+
+.header--hidden {
+  display: none;
+}
+
+@media (min-width: 40rem) {
+  .header__navigation,
+  .header__actions {
+    display: block;
+  }
+
+  .header__menu-icon {
+    display: none;
+  }
+  .header__navigation{
+    position: static;
+    flex-grow: 1;
+  }
+  .header--hidden {
+    display: block;
+  }
+}

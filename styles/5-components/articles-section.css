@@ -1,0 +1,70 @@
+/*
+<div class="articles-section">
+  <h2 class="articles-section__title">
+    Encuentra el artículo ideal
+  </h2>
+  <hr />
+  <div class="articles-section__list">
+    <article class="article-summary">...</article>
+    <article class="article-summary">...</article>
+    <article class="article-summary">...</article>
+  </div>
+</div>
+*/
+
+.articles-section {
+  margin-inline: auto;
+  padding: auto;
+  padding-top: 30px;
+  
+}
+
+.articles-section__header {
+  margin-bottom: var(--spacing-16);
+}
+
+.articles-section__title {
+  margin-bottom: var(--spacing-2);
+  font-size: var(--font-4xl);
+  font-weight: 700;
+  line-height: var(--leading-10);
+  letter-spacing: var(--tracking-tight);
+}
+
+.articles-section__title2 {
+  margin-bottom: var(--spacing-3);
+  font-size: var(--font-2xl);
+  font-weight: 700;
+  line-height: var(--leading-10);
+  letter-spacing: var(--tracking-tight);
+  scroll-margin-top: 10ex;
+
+}
+
+.articles-section__title3 {
+  margin-bottom: var(--spacing-6);
+  font-size: var(--font-xl);
+  font-weight: 700;
+  line-height: var(--leading-10);
+  letter-spacing: var(--tracking-tight);
+  background-color: rgb(173, 171, 232);
+  scroll-margin-top: 13ex;
+}
+
+
+.articles-section__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-16);
+}
+
+.articles-section__parrafo {
+  background-color: rgb(189, 185, 182);
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.articles-section__parrafo:hover {
+  transform: scale(1.05);
+
+}

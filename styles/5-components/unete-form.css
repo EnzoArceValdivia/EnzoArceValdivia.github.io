@@ -1,0 +1,35 @@
+/* 
+<div class="unete-form__wrapper">
+  <div class="unete-form">
+    <div class="form-field">...</div>
+    <div class="form-field">...</div>
+    <div class="form-field">...</div>
+    <div class="form-field">...</div>
+  </div>
+</div>
+*/
+
+.unete-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-8);
+}
+
+.unete-form__wrapper {
+  max-width: var(--width-2xl);
+  margin-inline: auto;
+}
+
+.unete-form input {
+  scroll-margin-top: calc(var(--spacing-24) + 32px);
+}
+
+@media (min-width: 40rem) {
+  .unete-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .unete-form__2-col {
+    grid-column: span 2;
+  }
+}

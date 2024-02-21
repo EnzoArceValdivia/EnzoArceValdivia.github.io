@@ -1,0 +1,13 @@
+/* 
+<div class="check-group">
+  <label class="check-item"><input type="radio" />Label 1</label>
+  <label class="check-item"><input type="radio" />Label 2</label>
+  <label class="check-item"><input type="radio" />Label 3</label>
+<div>
+*/
+
+.check-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}

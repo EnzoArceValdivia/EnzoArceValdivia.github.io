@@ -1,0 +1,46 @@
+/* 
+<div class="toc">
+  <p class="toc__title">En este artículo:</p>
+  <ul class="toc__links">
+    <li><a href="">Titulo 1</a></li>
+    <li><a href="">Titulo 2</a></li>
+    <li><a href="">Titulo 3</a></li>
+    <li><a href="">Titulo 4</a></li>
+  </ul>
+</div>
+*/
+
+.toc {
+  display: none;
+  padding-right: var(--spacing-4);
+  padding-top: var(--spacing-2);
+  margin-top: var(--spacing-24);
+
+  font-size: var(--font-sm);
+  font-weight: 500;
+  line-height: var(--leading-6);
+}
+
+.toc__title {
+  color: var(--muted-foreground);
+  margin-bottom: var(--spacing-2);
+}
+
+.toc__links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  color: var(--foreground);
+  list-style: none;
+}
+
+.toc__links a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (min-width: 64rem) {
+  .toc {
+    display: block;
+  }
+}

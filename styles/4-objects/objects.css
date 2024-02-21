@@ -1,0 +1,81 @@
+/* Sections */
+
+.section-sm {
+  padding-block: var(--spacing-6);
+}
+
+.section {
+  padding-block: var(--spacing-12);
+}
+
+.section-lg {
+  padding-block: var(--spacing-24);
+}
+
+.section-xl {
+  padding-block: var(--spacing-36);
+}
+
+/* Container */
+
+.container {
+  --padding: 16px;
+  padding-inline: var(--padding);
+  max-width: var(--width-7xl);
+  margin-inline: auto;
+}
+
+@media (min-width: 40rem) {
+  .container {
+    --padding: 24px;
+  }
+}
+
+@media (min-width: 64rem) {
+  .container {
+    --padding: 32px;
+  }
+}
+
+/*
+Pancake Layout
+
+<div class="pancake-stack">
+  <header>...</header>
+  <main>...</main>
+  <footer>...</footer>
+</div>
+*/
+
+.pancake-stack {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+/* Pancake Stack - Version Flexbox */
+
+/* .pancake-stack {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.pancake-stack > :nth-child(2) {
+  flex-grow: 1;
+} */
+
+/* Article container with TOC */
+
+.article-container {
+  display: flex;
+  align-items: flex-start;
+  max-width: var(--width-4xl);
+  margin-inline: auto;
+}
+
+.article-container > .toc {
+  flex-grow: 1;
+  position: sticky;
+  top: var(--spacing-24);
+}

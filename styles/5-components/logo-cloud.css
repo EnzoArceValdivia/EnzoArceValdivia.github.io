@@ -1,0 +1,33 @@
+/* .logo-cloud {
+} */
+
+.logo-cloud__header {
+  max-width: var(--width-2xl);
+  margin-inline: auto;
+
+  text-align: center;
+  margin-bottom: var(--spacing-16);
+}
+
+.logo-cloud__title {
+  font-family: var(--display);
+  font-size: var(--font-4xl);
+  font-weight: 600;
+  line-height: var(--leading-none);
+
+  margin-bottom: var(--spacing-6);
+}
+
+.logo-cloud__lead {
+  color: var(--muted-foreground);
+  font-size: var(--font-lg);
+  line-height: var(--leading-8);
+}
+
+.logo-cloud__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-8);
+}

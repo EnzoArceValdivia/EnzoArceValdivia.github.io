@@ -1,0 +1,160 @@
+.barra-lado{
+  display: none;
+  background-color: rgb(6, 6, 113);
+}
+
+@media (min-width: 20rem) { 
+  .backs-flex{
+    display: flex;
+    max-width: var(--width-2xl);
+    margin-left: 200px;
+    align-items: flex-start; /*Añadi el flex-start para q funcione sticky*/
+    justify-content: center;
+    float: left;
+    position: sticky; 
+
+
+  }
+ 
+  .barra-lado{
+    display:flex;
+    flex-grow: 2;
+    padding: 12px;
+    display: block;
+    /* Solo con esto no funciona , porque como 
+    es display flex , ocupa todo el alto del contenido
+    y un sticky pues tiene que tener un algo definido
+    para que funcione como tal , tendriamos que agregar
+    align-item:flex-start , velo arriba*/
+    position:fixed; 
+
+  }
+}
+
+.barra-lado__title{
+  margin-bottom: var(--spacing-2);
+  color: var(--neutral-100);
+
+  font-size: var(--font-4xl);
+  font-weight: 700;
+  line-height: var(--leading-10);
+  letter-spacing: var(--tracking-tight);
+}
+
+.barra-lado__text{
+  color: var(--neutral-100);
+  font-size: var(--font-sm);
+  margin-bottom: var(--spacing-1);
+}
+
+.barra-lado li{
+  list-style: none;
+  margin-bottom: var(--spacing-2);
+  color: var(--neutral-100);
+
+}
+
+.barra-lado__link{
+  text-decoration: none;
+  color: var(--neutral-100);
+  font-size: var(--font-sm);
+  font-weight: 500;
+}
+
+.sidebar {
+  background-color: #012a62;
+  width: 350px;
+  /*background-color: #f7f7f7;*/
+  border-right: 1px solid #ddd;
+  padding: 20px 0;
+  color: #ffffff;
+}
+
+.sidebar a {
+  color: #ffffff;
+  display: block;
+  padding: 10px 20px;
+  color: #333;
+  text-decoration: none;
+  /* font-size: 80%;*/
+  transition: background-color 0.3s;
+}
+.sidebar a:hover {
+  color: #282938;
+  background-color: #1e73be;
+}
+
+.scale-transform:hover {
+  transform: scale(1.05);
+   /*transform: scale(1.5, 1.2); */
+}
+
+
+.nav{
+  width: 480px;
+}
+
+.nav__link{
+  color: #ffffff;
+  display: block;
+  padding: 4px 0;
+  text-decoration: none;
+}
+
+.nav__link--inside{
+  border-radius: 6px ;
+  padding-left: 20px;
+  text-align: left;
+  font-size: small;
+}
+
+.nav__link--inside:hover{
+  background: #020635;
+}
+
+.list{
+  width: 24rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 16px 16px 0;
+  background-color: rgb(6, 6, 113);
+
+}
+
+.list__item{
+  list-style: none;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.list__item--click{
+  cursor: pointer;
+}
+
+.list__button{
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.arrow .list__arrow{
+  transform: rotate(90deg);
+}
+
+.list__arrow{
+  margin-left: auto;
+  transition: transform .3s;
+}
+
+.list__show{
+  width: 80%;
+  margin-left: auto;
+  border-left: 2px solid #fefefe;
+  list-style: none;
+  transition: height .4s;
+  height: 0;
+}

@@ -1,0 +1,113 @@
+/* .pricing {
+} */
+
+.pricing__header {
+  max-width: var(--width-2xl);
+  margin-inline: auto;
+
+  text-align: center;
+  margin-bottom: var(--spacing-16);
+}
+
+.pricing__title {
+  font-family: var(--display);
+  font-size: var(--font-4xl);
+  font-weight: 600;
+  line-height: var(--leading-none);
+
+  margin-bottom: var(--spacing-6);
+}
+
+.pricing__lead {
+  color: var(--muted-foreground);
+  font-size: var(--font-lg);
+  line-height: var(--leading-8);
+}
+
+.pricing__content {
+  display: flex;
+  max-width: var(--width-2xl);
+  flex-direction: column;
+  gap: var(--spacing-2);
+  margin-inline: auto;
+
+  border-radius: var(--rounded-3xl);
+  border: 1px solid var(--border);
+}
+
+.pricing__left-panel {
+  padding: var(--spacing-6);
+}
+
+.pricing__product-title {
+  color: var(--foreground);
+  font-size: var(--font-2xl);
+  font-weight: 700;
+  line-height: var(--leading-8);
+  letter-spacing: var(--tracking-tight);
+  margin-bottom: var(--spacing-6);
+}
+
+.pricing__product-description {
+  color: var(--muted-foreground);
+  line-height: var(--leading-7);
+  margin-bottom: var(--spacing-10);
+}
+
+.pricing__product-features > p {
+  color: var(--primary);
+  font-size: var(--font-sm);
+  font-weight: 600;
+  line-height: var(--leading-6);
+  margin-bottom: var(--spacing-8);
+}
+
+.pricing__product-features > ul {
+  list-style: none;
+  display: grid;
+  gap: var(--spacing-6);
+}
+
+.pricing__product-features li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.pricing__product-features li::before {
+  content: "";
+  background: url("/assets/icons/check.svg");
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.pricing__right-panel {
+  padding: var(--spacing-2);
+}
+
+@media (min-width: 40rem) {
+  .pricing__product-features > ul {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 64rem) {
+  .pricing__content {
+    flex-direction: row;
+    max-width: unset;
+  }
+
+  .pricing__left-panel {
+    flex-shrink: 2;
+  }
+
+  .pricing__right-panel {
+    flex-basis: var(--width-md);
+    max-width: var(--width-md);
+  }
+
+  .pricing__right-panel > * {
+    height: 100%;
+  }
+}
