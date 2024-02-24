@@ -83,3 +83,7 @@ input::file-selector-button {
   font-weight: 500;
   line-height: inherit;
 }
+
+p {
+  text-align: justify;
+}

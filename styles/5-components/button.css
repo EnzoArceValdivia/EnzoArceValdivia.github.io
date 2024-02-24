@@ -5,7 +5,7 @@
 .button {
   display: inline-flex;
   height: 2.5rem;
-  padding: var(--spacing-2) var(--spacing-4);
+  padding: var(--spacing-4) var(--spacing-8);
   justify-content: center;
   align-items: center;
   gap: var(--spacing-2);
@@ -15,7 +15,7 @@
   cursor: pointer;
   text-decoration: none;
 
-  font-size: var(--font-sm);
+  font-size: var(--font-xl);
   color: var(--primary-foreground);
   line-height: var(--leading-5);
   font-weight: 500;

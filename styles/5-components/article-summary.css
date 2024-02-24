@@ -52,7 +52,7 @@
 .article-summary__title {
   margin-top: 0px;
   margin-bottom: 20px;
-
+  text-transform: capitalize;
   font-size: var(--font-lg);
   font-weight: 600;
   line-height: var(--leading-6);

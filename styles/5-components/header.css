@@ -16,7 +16,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 32px;
-  background-color: rgb(6, 6, 113);
+  background-color: rgb(1, 42, 98);
   /*background-color: var(--background);*/
 
   position: sticky;
@@ -46,7 +46,7 @@
 .header__navigation {
   position: absolute;
   top: 75px;
-  background-color: rgb(6, 6, 113);
+  background-color: rgb(1, 42, 98);
   right: 0;
   left: 0;
   padding-block: var(--spacing-4);

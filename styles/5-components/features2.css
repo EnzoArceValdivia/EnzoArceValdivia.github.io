@@ -56,7 +56,9 @@
 .features2__list {
   list-style: none;
   display: grid;
-  row-gap: var(--spacing-8);
+ /* row-gap: var(--spacing-6);*/
+  margin-top: 60px;
+  margin-bottom: 80px;
 }
 
 .features2__item {

@@ -1,6 +1,6 @@
 .barra-lado{
   display: none;
-  background-color: rgb(6, 6, 113);
+  background-color: rgb(1, 42, 98);
 }
 
 @media (min-width: 20rem) { 
@@ -105,7 +105,7 @@
   border-radius: 6px ;
   padding-left: 20px;
   text-align: left;
-  font-size: small;
+  font-size:medium;
 }
 
 .nav__link--inside:hover{
@@ -118,7 +118,7 @@
   display: flex;
   flex-direction: column;
   border-radius: 0 16px 16px 0;
-  background-color: rgb(6, 6, 113);
+  background-color: rgb(1, 42, 98);
 
 }
 
@@ -137,7 +137,7 @@
   display: flex;
   align-items: center;
   gap: 1em;
-  width: 70%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -151,7 +151,7 @@
 }
 
 .list__show{
-  width: 80%;
+  width: 90%;
   margin-left: auto;
   border-left: 2px solid #fefefe;
   list-style: none;

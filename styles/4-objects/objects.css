@@ -19,6 +19,13 @@
 /* Container */
 
 .container {
+  --padding: 4px;
+  padding-inline: var(--padding);
+  max-width: var(--width-7xl);
+  margin-inline: auto;
+}
+
+.container2 {
   --padding: 16px;
   padding-inline: var(--padding);
   max-width: var(--width-7xl);
@@ -26,13 +33,13 @@
 }
 
 @media (min-width: 40rem) {
-  .container {
+  .container2 {
     --padding: 24px;
   }
 }
 
 @media (min-width: 64rem) {
-  .container {
+  .container2 {
     --padding: 32px;
   }
 }

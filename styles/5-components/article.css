@@ -2,6 +2,14 @@
 
 .article {
   max-width: var(--width-2xl);
+  margin-left: 450px;
+  margin-right: 10px;
+  padding: auto;
+  padding-top: 30px;
+}
+
+.article2 {
+  max-width: var(--width-2xl);
   margin-inline: auto;
   padding: auto;
   padding-top: 30px;
