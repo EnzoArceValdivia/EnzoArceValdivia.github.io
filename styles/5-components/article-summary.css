@@ -66,8 +66,14 @@
   margin-top: 20px;
   margin-bottom: 0px;
 
-  font-size: var(--font-sm);
+  font-size: var(--font-base);
   line-height: var(--leading-6);
+  font-weight: bold;
+  text-shadow: 
+        -1px -1px 0 #fff,  
+        1px -1px 0 #fff,
+        -1px 1px 0 #fff,
+        1px 1px 0 #fff;
 }
 
 .article-summary__footer {

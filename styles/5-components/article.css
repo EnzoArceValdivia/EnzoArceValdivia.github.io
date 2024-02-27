@@ -6,6 +6,11 @@
   margin-right: 10px;
   padding: auto;
   padding-top: 30px;
+
+  background-image: url(/assets/images/elcarmelo.png); 
+    background-size: 300px 600px; 
+    background-position: center; 
+    background-repeat: repeat-y;
 }
 
 .article2 {

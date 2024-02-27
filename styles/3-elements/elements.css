@@ -87,3 +87,8 @@ input::file-selector-button {
 p {
   text-align: justify;
 }
+
+a {
+  text-decoration: none; 
+  color: inherit; 
+}

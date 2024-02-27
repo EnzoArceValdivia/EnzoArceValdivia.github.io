@@ -21,13 +21,8 @@
     flex-grow: 2;
     padding: 12px;
     display: block;
-    /* Solo con esto no funciona , porque como 
-    es display flex , ocupa todo el alto del contenido
-    y un sticky pues tiene que tener un algo definido
-    para que funcione como tal , tendriamos que agregar
-    align-item:flex-start , velo arriba*/
     position:fixed; 
-
+    max-width: 408px;
   }
 }
 
@@ -39,6 +34,8 @@
   font-weight: 700;
   line-height: var(--leading-10);
   letter-spacing: var(--tracking-tight);
+  overflow: hidden;
+  word-wrap: break-word;
 }
 
 .barra-lado__text{
@@ -157,4 +154,5 @@
   list-style: none;
   transition: height .4s;
   height: 0;
+  text-transform: capitalize
 }

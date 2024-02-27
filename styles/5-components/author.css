@@ -21,8 +21,13 @@
 }
 
 .author__info {
-  font-size: var(--font-sm);
+  font-size: var(--font-xl);
   line-height: var(--leading-6);
+  text-shadow: 
+        -1px -1px 0 #fff,  
+        1px -1px 0 #fff,
+        -1px 1px 0 #fff,
+        1px 1px 0 #fff;
 }
 
 .author__info > * {
@@ -30,5 +35,5 @@
 }
 
 .author_name {
-  font-weight: 600;
+  font-weight: bold;
 }

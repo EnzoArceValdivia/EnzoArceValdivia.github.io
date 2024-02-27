@@ -38,6 +38,8 @@
   line-height: var(--leading-10);
   letter-spacing: var(--tracking-tight);
   scroll-margin-top: 10ex;
+  text-transform: uppercase;
+
 
 }
 
@@ -49,6 +51,20 @@
   letter-spacing: var(--tracking-tight);
   scroll-margin-top: 13ex;
   text-transform: uppercase;
+}
+
+.articles-section__title4 {
+  margin-bottom: var(--spacing-6);
+  font-size: var(--font-base);
+  font-weight: 700;
+  /*line-height: var(--leading-10);*/
+  letter-spacing: var(--tracking-tight);
+  scroll-margin-top: 13ex;
+  text-transform: uppercase;
+}
+
+.articles-section__link:hover {
+  color: rgb(0, 0, 255);
 }
 
 
