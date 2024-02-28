@@ -51,6 +51,7 @@
   letter-spacing: var(--tracking-tight);
   scroll-margin-top: 13ex;
   text-transform: uppercase;
+  background-color: rgb(127, 171, 233);
 }
 
 .articles-section__title4 {

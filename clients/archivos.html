@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SIE-STELLA / Archivos</title>
+  <link rel="stylesheet" href="/styles/index.css" />
+</head>
+
+<body>
+  <div class="pancake-stack">
+    <header class="header container2">
+      <h1 class="header__logo"><a href="/index.html">
+        <img width="250" height="60" src="/assets/images/stelalogo.png" alt="Stella"></a></h1>
+      <nav class="header__navigation navigation">
+        <ul>
+          <li><a href="/clients/componentes/componentes.html">Componentes</a></li>
+          <li><a href="/clients/agenda.html">Agenda</a></li>
+          <li><a href="/clients/mensajeria.html">Mensajeria</a></li>
+          <li><a href="/clients/capacitaciones.html">Capacitaciones</a></li>
+          <li><a href="/clients/videos.html">Videos</a></li>
+          <li><a href="/clients/archivos.html">Archivos</a></li>
+        </ul>
+      </nav>
+      <img width="150" height="60" src="/assets/images/carmelo logo2.png" alt="Stella"></a></h1>
+    </header>
+  
+    <main>
+      <div class="section">
+        <div class="container">
+          <article class="article2">
+            <div class="content">
+              <div id="file-manager">
+                <h2>Archivos</h2>
+                <input type="file" id="file-input" multiple>
+                <button onclick="uploadFiles()">Subir Archivos</button>
+                <div id="file-display"></div>
+              </div>
+              
+              <script>
+                let uploadedFiles = [];
+              
+                function uploadFiles() {
+                  const files = document.getElementById('file-input').files;
+                  for (let file of files) {
+                    uploadedFiles.push(file);
+                    displayFiles();
+                  }
+                }
+              
+                function displayFiles() {
+                const fileDisplay = document.getElementById('file-display');
+                fileDisplay.innerHTML = ''; // Limpiar la visualización anterior
+                uploadedFiles.forEach((file, index) => {
+                  let fileElement = document.createElement('div');
+                  fileElement.innerHTML = `Nombre: ${file.name}, Tipo: ${file.type} <button onclick="deleteFile(${index})">Eliminar</button>`;
+              
+                  // Vista previa para imágenes
+                  if (file.type.startsWith('image/')) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                      const img = document.createElement('img');
+                      img.src = e.target.result;
+                      img.style.width = '100px'; // Tamaño de la vista previa
+                      fileElement.appendChild(img);
+                    };
+                    reader.readAsDataURL(file);
+                  }
+                  // Vista previa para PDFs
+                  else if (file.type === 'application/pdf') {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                      const iframe = document.createElement('iframe');
+                      iframe.src = e.target.result;
+                      iframe.style.width = '100%';
+                      iframe.style.height = '500px'; // Altura del iframe
+                      fileElement.appendChild(iframe);
+                    };
+                    reader.readAsDataURL(file);
+                  }
+                  // Sugerencia para documentos Word
+                  else if (file.type === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
+                    fileElement.appendChild(document.createTextNode(' Vista previa no disponible para documentos Word. '));
+                    // Podrías ofrecer un enlace para descargar el archivo o buscar una manera de convertirlo a PDF para su visualización.
+                  }
+              
+                  fileDisplay.appendChild(fileElement);
+                });
+              }
+              
+              
+                function deleteFile(index) {
+                  uploadedFiles.splice(index, 1); // Remove the file from the array
+                  displayFiles(); // Update the display
+                }
+              </script>
+
+            </div>
+            </article>
+        </div>
+      </div>
+    </main>
+
+    <footer class="container footer">
+        <small class="footer__text">&copy; 2024 Stella - Todos los derechos reservados</small>
+    </footer>
+  </div>  
+</body>
+</html>
+
+

@@ -52,10 +52,11 @@
 .article-summary__title {
   margin-top: 0px;
   margin-bottom: 20px;
-  text-transform: capitalize;
+  text-transform: uppercase;
   font-size: var(--font-lg);
   font-weight: 600;
   line-height: var(--leading-6);
+  scroll-margin-top: 13ex;
 }
 
 /*.article-summary__content:hover .article-summary__title {
