@@ -154,5 +154,5 @@
   list-style: none;
   transition: height .4s;
   height: 0;
-  text-transform: capitalize
+  /*text-transform: capitalize*/
 }
