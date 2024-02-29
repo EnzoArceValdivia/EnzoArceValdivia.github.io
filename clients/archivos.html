@@ -33,9 +33,11 @@
             <div class="content">
               <div id="file-manager">
                 <h2>Archivos</h2>
-                <input type="file" id="file-input" multiple>
-                <button onclick="uploadFiles()">Subir Archivos</button>
-                <div id="file-display"></div>
+                  <div class="file-actions">
+                    <button class="file-action-button" onclick="uploadFiles()">Agregar</button>
+                    <button class="file-action-button" onclick="displayFiles()">Visualizar</button>
+                    <button class="file-action-button" onclick="deleteFile()">Eliminar</button>
+                  </div>
               </div>
               
               <script>
@@ -108,5 +110,3 @@
   </div>  
 </body>
 </html>
-
-
