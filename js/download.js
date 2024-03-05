@@ -1,22 +1,18 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const openModalButtons = document.querySelectorAll(".open-modal");
-    const closeModalButton = document.getElementById("closeModal");
-    const pdfModal = document.getElementById("pdfModal");
-    const pdfViewer = document.getElementById("pdfViewer");
+// Función para abrir el PDF en una ventana emergente
+function abrirPDF(pdfSrc) {
+    // Abre el PDF en una ventana emergente
+    window.open(pdfSrc, "_blank", "width=800,height=600");
+}
 
-    openModalButtons.forEach(function(button) {
-        button.addEventListener("click", function() {
-            // Obtener la ruta del documento asociada al botón actual
-            const pdfSrc = button.getAttribute("data-src");
-            // Cambiar la URL del visor de PDF con la ruta del documento
-            pdfViewer.src = pdfSrc;
-            pdfModal.classList.remove("modal--hidden");
-        });
-    });
+// Obtén todos los botones de descarga
+var botonesDescarga = document.querySelectorAll(".button");
 
-    closeModalButton.addEventListener("click", function() {
-        pdfModal.classList.add("modal--hidden");
-        // Detener la carga del PDF al cerrar el modal
-        pdfViewer.src = "";
+// Agrega un evento de clic a cada botón para llamar a la función abrirPDF
+botonesDescarga.forEach(function(boton) {
+    boton.addEventListener("click", function() {
+        // Obtén la ruta del PDF asignada al botón actual
+        var pdfSrc = this.getAttribute('data-src');
+        // Llama a la función para abrir el PDF en una ventana emergente
+        abrirPDF(pdfSrc);
     });
 });
