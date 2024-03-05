@@ -21,14 +21,17 @@
 }
 
 .author__info {
-  font-size: var(--font-xl);
+  font-size: var(--font-base);
   line-height: var(--leading-6);
+  text-align: center;
   text-shadow: 
         -1px -1px 0 #fff,  
         1px -1px 0 #fff,
         -1px 1px 0 #fff,
         1px 1px 0 #fff;
 }
+
+
 
 .author__info > * {
   display: block;
@@ -37,3 +40,4 @@
 .author_name {
   font-weight: bold;
 }
+

@@ -26,6 +26,11 @@
   gap: var(--spacing-8);
 }
 
+.testimonials__img {
+  width: 290px;
+  height: 210px;
+}
+
 .testimonials__efect :hover {
   transform: scale(1.2);
 }
@@ -41,17 +46,19 @@
   transform: scale(1); 
 }
 
-
+.testimonials__item:hover .testimonials__img {
+  transform: scale(1); 
+}
 
 .testimonials__item {
-  padding: var(--spacing-8);
+  padding: var(--spacing-4);
   border-radius: var(--rounded-2xl);
-  /*background: var(--muted);*/
-  background-size: cover; /* o 'contain' si prefieres */
+  background: var(--muted);
+  /*background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  width: 300px; /* Asigna un ancho de 300px */
-  height: 320px; /* Asigna una altura de 200px */
+  background-repeat: no-repeat;*/
+  width: 310px; 
+  height: 280px;
 }
 
 .testimonials__item[data-background-image="cover_laboral"] {
