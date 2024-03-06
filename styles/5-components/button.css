@@ -87,3 +87,7 @@
   width: 2.5rem;
   padding: 0;
 }
+
+#pdfContainer {
+  text-align: center; /* Centra el contenido horizontalmente */
+}
