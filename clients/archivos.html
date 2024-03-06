@@ -26,6 +26,8 @@
       <img width="150" height="60" src="/assets/images/carmelo logo2.png" alt="Stella"></a></h1>
     </header>
   
+    <!-- ... resto del código anterior ... -->
+
     <main>
       <div class="section">
         <div class="container">
@@ -33,77 +35,69 @@
             <div class="content">
               <div id="file-manager">
                 <h2>Archivos</h2>
-                  <div class="file-actions">
-                    <button class="file-action-button" onclick="uploadFiles()">Agregar</button>
-                    <button class="file-action-button" onclick="displayFiles()">Visualizar</button>
-                    <button class="file-action-button" onclick="deleteFile()">Eliminar</button>
-                  </div>
+                <input type="file" id="file-input" multiple>
+                <div class="file-actions">
+                  <button class="file-action-button" onclick="uploadFiles()">Agregar</button>
+                  <!-- Botón de visualizar ahora es parte de cada elemento de archivo, por lo que se elimina de aquí -->
+                  <button class="file-action-button" onclick="deleteSelectedFile()">Eliminar</button>
+                </div>
+                <div id="file-list"></div>
+                <!-- El iframe para la vista previa del archivo -->
+                <iframe id="file-preview" style="display:none;"></iframe>
               </div>
-              
-              <script>
-                let uploadedFiles = [];
-              
-                function uploadFiles() {
-                  const files = document.getElementById('file-input').files;
-                  for (let file of files) {
-                    uploadedFiles.push(file);
-                    displayFiles();
-                  }
-                }
-              
-                function displayFiles() {
-                const fileDisplay = document.getElementById('file-display');
-                fileDisplay.innerHTML = ''; // Limpiar la visualización anterior
-                uploadedFiles.forEach((file, index) => {
-                  let fileElement = document.createElement('div');
-                  fileElement.innerHTML = `Nombre: ${file.name}, Tipo: ${file.type} <button onclick="deleteFile(${index})">Eliminar</button>`;
-              
-                  // Vista previa para imágenes
-                  if (file.type.startsWith('image/')) {
-                    const reader = new FileReader();
-                    reader.onload = function(e) {
-                      const img = document.createElement('img');
-                      img.src = e.target.result;
-                      img.style.width = '100px'; // Tamaño de la vista previa
-                      fileElement.appendChild(img);
-                    };
-                    reader.readAsDataURL(file);
-                  }
-                  // Vista previa para PDFs
-                  else if (file.type === 'application/pdf') {
-                    const reader = new FileReader();
-                    reader.onload = function(e) {
-                      const iframe = document.createElement('iframe');
-                      iframe.src = e.target.result;
-                      iframe.style.width = '100%';
-                      iframe.style.height = '500px'; // Altura del iframe
-                      fileElement.appendChild(iframe);
-                    };
-                    reader.readAsDataURL(file);
-                  }
-                  // Sugerencia para documentos Word
-                  else if (file.type === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
-                    fileElement.appendChild(document.createTextNode(' Vista previa no disponible para documentos Word. '));
-                    // Podrías ofrecer un enlace para descargar el archivo o buscar una manera de convertirlo a PDF para su visualización.
-                  }
-              
-                  fileDisplay.appendChild(fileElement);
-                });
-              }
-              
-              
-                function deleteFile(index) {
-                  uploadedFiles.splice(index, 1); // Remove the file from the array
-                  displayFiles(); // Update the display
-                }
-              </script>
-
             </div>
-            </article>
+          </article>
         </div>
       </div>
     </main>
-
+    <script>
+      let uploadedFiles = [];
+      let currentSelectedFile = null;
+    
+      function uploadFiles() {
+        const files = document.getElementById('file-input').files;
+        uploadedFiles = [...files]; // Asigna los archivos subidos a la variable
+        displayFileList();
+      }
+    
+      function displayFileList() {
+        const fileList = document.getElementById('file-list');
+        fileList.innerHTML = ''; // Limpia la lista anterior
+        uploadedFiles.forEach((file, index) => {
+          const fileItem = document.createElement('div');
+          fileItem.textContent = file.name;
+          fileItem.className = 'file-item'; // Agrega una clase para estilos
+          // Botón para visualizar el archivo
+          const visualizeButton = document.createElement('button');
+          visualizeButton.textContent = 'Visualizar';
+          visualizeButton.className = 'file-action-button';
+          visualizeButton.onclick = () => visualizeFile(index);
+          // Agrega el archivo y el botón al div de fileList
+          fileList.appendChild(fileItem);
+          fileList.appendChild(visualizeButton);
+        });
+      }
+    
+      function visualizeFile(index) {
+        const file = uploadedFiles[index];
+        const fileReader = new FileReader();
+        fileReader.onload = function(e) {
+          const filePreview = document.getElementById('file-preview');
+          filePreview.style.display = 'block';
+          filePreview.src = e.target.result;
+        };
+        fileReader.readAsDataURL(file);
+      }
+    
+      function deleteSelectedFile() {
+        if (currentSelectedFile !== null) {
+          uploadedFiles.splice(currentSelectedFile, 1);
+          currentSelectedFile = null; // Resetea el archivo seleccionado
+          displayFileList();
+        }
+      }
+    </script>
+    
     <footer class="container footer">
         <small class="footer__text">&copy; 2024 Stella - Todos los derechos reservados</small>
     </footer>

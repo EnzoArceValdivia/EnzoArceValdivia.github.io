@@ -59,21 +59,3 @@
 
 /* 6. Utilities */
 @import url(6-utilities/utilities.css);
-
-
-/* 7. Archivos */
-.file-action-button {
-  font-size: 30px; 
-  padding: 15px 30px; 
-  margin: 10px; 
-  background-color: #0056b3; 
-  color: white; 
-  border: none; 
-  border-radius: 5px; 
-  cursor: pointer; 
-  transition: background-color 0.3s; 
-}
-
-.file-action-button:hover {
-  background-color: #003d82; 
-}
