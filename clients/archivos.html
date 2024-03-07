@@ -16,33 +16,25 @@
       <nav class="header__navigation navigation">
         <ul>
           <li><a href="/clients/componentes/componentes.html">Componentes</a></li>
-          <!-- <li><a href="/clients/agenda.html">Agenda</a></li>
-          <li><a href="/clients/mensajeria.html">Mensajeria</a></li>
-          <li><a href="/clients/capacitaciones.html">Capacitaciones</a></li>
-          <li><a href="/clients/videos.html">Videos</a></li> -->
           <li><a href="/clients/archivos.html">Archivos</a></li>
         </ul>
       </nav>
       <img width="150" height="60" src="/assets/images/carmelo logo2.png" alt="Stella"></a></h1>
     </header>
-  
-    <!-- ... resto del código anterior ... -->
 
     <main>
       <div class="section">
         <div class="container">
           <article class="article2">
             <div class="content">
-              <div id="file-manager">
-                <h2>Archivos</h2>
-                <input type="file" id="file-input" multiple>
-                <div class="file-actions">
+                <div id="upload-area">
+                  <h2>Archivos</h2>
+                  <input type="file" id="file-input" multiple>
                   <button class="file-action-button" onclick="uploadFiles()">Agregar</button>
-                  <!-- Botón de visualizar ahora es parte de cada elemento de archivo, por lo que se elimina de aquí -->
-                  <button class="file-action-button" onclick="deleteSelectedFile()">Eliminar</button>
                 </div>
-                <div id="file-list"></div>
-                <!-- El iframe para la vista previa del archivo -->
+                <div id="file-list-container" class="file-list-container">
+                  <div id="file-list"></div>
+                </div>
                 <iframe id="file-preview" style="display:none;"></iframe>
               </div>
             </div>
@@ -52,49 +44,47 @@
     </main>
     <script>
       let uploadedFiles = [];
-      let currentSelectedFile = null;
     
       function uploadFiles() {
         const files = document.getElementById('file-input').files;
-        uploadedFiles = [...files]; // Asigna los archivos subidos a la variable
+        uploadedFiles.push(...files); 
         displayFileList();
       }
     
       function displayFileList() {
         const fileList = document.getElementById('file-list');
-        fileList.innerHTML = ''; // Limpia la lista anterior
+        fileList.innerHTML = ''; 
         uploadedFiles.forEach((file, index) => {
           const fileItem = document.createElement('div');
+          fileItem.className = 'file-item';
           fileItem.textContent = file.name;
-          fileItem.className = 'file-item'; // Agrega una clase para estilos
-          // Botón para visualizar el archivo
+          
           const visualizeButton = document.createElement('button');
           visualizeButton.textContent = 'Visualizar';
           visualizeButton.className = 'file-action-button';
-          visualizeButton.onclick = () => visualizeFile(index);
-          // Agrega el archivo y el botón al div de fileList
+          visualizeButton.onclick = () => visualizeFile(file);
+    
+          const deleteButton = document.createElement('button');
+          deleteButton.textContent = 'Eliminar';
+          deleteButton.className = 'file-action-button';
+          deleteButton.onclick = () => deleteFile(index);
+    
           fileList.appendChild(fileItem);
           fileList.appendChild(visualizeButton);
+          fileList.appendChild(deleteButton);
         });
       }
     
-      function visualizeFile(index) {
-        const file = uploadedFiles[index];
-        const fileReader = new FileReader();
-        fileReader.onload = function(e) {
-          const filePreview = document.getElementById('file-preview');
-          filePreview.style.display = 'block';
-          filePreview.src = e.target.result;
-        };
-        fileReader.readAsDataURL(file);
+      function visualizeFile(file) {
+        const filePreview = document.getElementById('file-preview');
+        filePreview.style.display = 'block';
+        filePreview.src = URL.createObjectURL(file);
       }
     
-      function deleteSelectedFile() {
-        if (currentSelectedFile !== null) {
-          uploadedFiles.splice(currentSelectedFile, 1);
-          currentSelectedFile = null; // Resetea el archivo seleccionado
-          displayFileList();
-        }
+      function deleteFile(index) {
+        uploadedFiles.splice(index, 1);
+        displayFileList();
+        document.getElementById('file-preview').style.display = 'none';
       }
     </script>
     

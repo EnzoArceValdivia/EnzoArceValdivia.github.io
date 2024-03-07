@@ -45,6 +45,7 @@
 }
 
 
+/*
 Pancake Layout
 
 <div class="pancake-stack">
@@ -54,11 +55,13 @@ Pancake Layout
 </div>
 */
 
-/*.pancake-stack {
+
+.pancake-stack {
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
-}*/
+}
+
 /*////////////////////////*/
 /* Pancake Stack - Version Flexbox */
 
@@ -86,3 +89,52 @@ Pancake Layout
   position: sticky;
   top: var(--spacing-24);
 }
+
+
+
+.file-action-button {
+  background-color: #007bff; /* Color de fondo azul */
+  color: white; /* Texto en color blanco */
+  border: none; /* Sin bordes */
+  padding: 10px 15px; /* Relleno para los botones */
+  margin: 5px; /* Margen alrededor de los botones */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambiar el cursor a mano al pasar por encima */
+  transition: background-color 0.3s; /* Efecto de transición suave al cambiar el color de fondo */
+}
+
+.file-action-button:hover {
+  background-color: #0056b3; /* Color de fondo azul más oscuro al pasar el cursor por encima */
+}
+
+
+#file-manager {
+  /* Estilos para el área de selección de archivos y botones */
+}
+
+
+.file-item {
+  padding: 10px; 
+  border-bottom: 1px solid #ddd; 
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+}
+
+
+.file-list-container {
+  border: 1px solid #000;
+  max-height: 200px; 
+  overflow-y: auto; 
+  margin-top: 20px; 
+  width: 100%;
+}
+
+#file-preview {
+  width: 100%; 
+  height: 600px; 
+  display: none; 
+  margin-top: 20px; 
+}
+
+
