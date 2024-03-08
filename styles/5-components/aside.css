@@ -6,7 +6,7 @@
 @media (min-width: 20rem) { 
   .backs-flex{
     display: flex;
-    max-width: var(--width-2xl);
+    max-width: 350px;
     margin-left: 200px;
     align-items: flex-start; /*Añadi el flex-start para q funcione sticky*/
     justify-content: center;
@@ -22,7 +22,8 @@
     padding: 12px;
     display: block;
     position:fixed; 
-    max-width: 408px;
+    max-width: 350px;
+    left: 0;
   }
 }
 
@@ -110,7 +111,7 @@
 }
 
 .list{
-  width: 24rem;
+  width: 20rem;
   height: auto;
   display: flex;
   flex-direction: column;

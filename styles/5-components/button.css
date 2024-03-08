@@ -88,6 +88,13 @@
   padding: 0;
 }
 
+.boton-container {
+  display: flex;
+  justify-content: flex-start; /* Alinea los elementos hijos horizontalmente */
+  align-items: center; /* Centra los elementos hijos verticalmente */
+  margin-top: 10px;
+}
+
 #pdfContainer {
   text-align: center; /* Centra el contenido horizontalmente */
 }

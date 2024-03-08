@@ -17,9 +17,9 @@
 /* .article-summary {
 } */
 
-.article-summary__container {
+/* .article-summary__container {
   max-width: var(--width-xl);
-}
+} */
 
 .article-summary__image-container {
   aspect-ratio: 16 / 9;

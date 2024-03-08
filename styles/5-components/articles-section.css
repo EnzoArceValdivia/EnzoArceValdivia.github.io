@@ -81,7 +81,7 @@
 }
 
 .articles-section__parrafo:hover {
-  transform: scale(1.05);
+  /* transform: scale(1.05); */
   color: rgb(160, 26, 26);
 
 }

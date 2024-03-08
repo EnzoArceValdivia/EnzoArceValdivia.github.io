@@ -103,12 +103,21 @@
                                 variación en su contenido, no se difunde a los trabajadores.
                               </p>
 
-                              <button class="button open-modal" 
-                              data-src="/clients/componentes/AGLaborar/documentos/A/ANEXO  - CCF EL CARMELO.xls"
-                              data-tipo="excel">Visualizar</button>
+                              <button class="button open-pdf" data-src="/clients/componentes/AGLaborar/documentos/A/INFORME INSTRUMENTOS HSL (2).pdf">Visualizar</button>
                               <div id="pdfContainer" class="pdf-container">
                                 <!-- El documento PDF se mostrará aquí -->
-                                <a href=""></a>
+                                <a href="Mentes Inquietas temario.docx"></a>
+
+
+                                <div class="boton-container">
+                                  <button class="button open-word" 
+                                  data-src="Mentes Inquietas temario.docx"
+                                  >Visualizar Word</button>
+                                  <button class="button open-excel" 
+                                  data-src="ANEXO  - CCF EL CARMELO.xls"
+                                  >Visualizar Excel</button>
+                                  
+                              </div>
                             </div>
 
                             </a>
@@ -130,7 +139,8 @@
       </main>
     </div>
     <script src="/js/main.js"></script>
-    <script src="/js/download.js"></script>
+    <script src="/js/verPDF.js"></script>
+    <script src="/js/verWord_Excel.js"></script>
 
   </body>
 </html>
