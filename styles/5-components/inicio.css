@@ -1,0 +1,221 @@
+
+/* Elements */
+
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    align-content: center;
+    justify-content: center;
+}
+    
+.sub-container {
+    background-size: cover;
+    background-position: center;
+    width: 45%;
+    height: 45vh;
+    margin: 2.5%;
+    position: relative;
+    opacity: 0.7;
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: white;
+    font-weight: bold;
+    z-index: 2;
+}
+
+/* Objects */
+
+
+/* Components */
+
+/* Utilities */
+
+/* Additional styles for the login page */
+
+/* Components */
+
+.main-login-container {
+   display: flex;
+   /*height: 100vh;*/
+}
+
+.login-container {
+    width: 25%; /* Ocupa el 25% del ancho de la pantalla */
+    height: 100vh; /* Ocupa todo el alto de la pantalla */
+    margin: 5px;
+    align-content: left;
+}
+
+/* Estilo para login-cover */
+.login-cover {
+    width: 75%; /* Ocupa el resto (100% - 25%) del ancho de la pantalla */
+    height: 90vh; /* Ocupa todo el alto de la pantalla */
+    background-image: url('/assets/images/reunion1.png');
+    background-repeat: no-repeat;
+    background-position: center; /* centra la imagen */
+    background-size: cover;
+ }
+
+/* Estilo para login-container-top */
+.login-container-top {
+    height: 25%; /* Ocupa la mitad superior de login-container */
+    width: 100%; /* Ocupa todo el ancho de su contenedor padre */
+/* Estilos flexbox */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: flex-end;   /* Alinea en la parte inferior */
+    padding-bottom: 50px;    /* Espacio en la parte inferior para que no quede pegado al borde */
+}
+
+/* Estilo para login-container-bottom */
+.login-container-bottom {
+    height: 50%; /* Ocupa la mitad inferior de login-container */
+    width: 100%; /* Ocupa todo el ancho de su contenedor padre */
+}
+
+#loginForm input, #loginForm button, #loginForm a {
+    display: block;      /* Hace que el elemento sea de bloque */
+    margin-bottom: 10px; /* Espacio entre elementos para una mejor presentación */
+    width: 100%;         /* Ocupa todo el ancho disponible */
+}
+
+.input-group, .submit-group {
+    margin-bottom: 15px;
+}
+
+.input-group label, .submit-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 15px;
+}
+
+input[type="submit"] {
+    background-color: #007BFF;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.dynamic-content {
+    display: flex;
+    flex-grow: 1; /* Supuestamente esto hace que tome el resto del espacio del container */
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ajusta esto según lo necesites */
+}
+
+.comp-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: stretch;
+    /*height: 50vh; /* Puedes ajustar esto si es necesario */
+}
+
+.comp-text {
+    font-size: 28px; /* Ajusta este valor según tus necesidades */
+    text-align: center;
+    cursor: pointer;
+}
+
+.comp-sub-container {
+    width: 400px;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: top;    /* Centra verticalmente */
+    /*background-image: url('/static/img/cover_laboral.png'); /* Cambia la URL a la ruta de tu imagen */
+    background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+    background-position: center; /* Centra la imagen en el contenedor */
+    margin: 10px; /* Ajusta este valor según tus necesidades */
+    transition: transform 0.3s;
+    /*filter: brightness(2); /*saturate(0.25)*/
+}
+
+/* Estilos para el formulario */
+.login2 {
+    padding: 20px;              /* Relleno alrededor del formulario */
+    border: 1px solid #ccc;     /* Borde alrededor del formulario */
+    border-radius: 5px;         /* Bordes redondeados */
+    width: 80%;                 /* Ancho del formulario */
+    margin: 0 auto;             /* Centra el formulario horizontalmente */
+    background-color: #f9f9f9; /* Color de fondo del formulario */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos para los campos de entrada */
+.login2 input {
+    padding: 10px;              /* Relleno dentro de los campos de entrada */
+    border: 1px solid #ccc;     /* Borde alrededor de los campos de entrada */
+    border-radius: 4px;         /* Bordes redondeados */
+    width: 100%;                /* Ocupa todo el ancho disponible */
+    margin-bottom: 10px;        /* Espacio entre campos de entrada */
+    box-sizing: border-box;     /* Asegura que el padding y el borde no aumenten el tamaño total del elemento */
+}
+
+/* Estilos para el botón de enviar */
+.login2 button {
+    padding: 10px 15px;              /* Relleno alrededor del texto del botón */
+    border: none;                    /* Sin borde */
+    background-color: hsl(211, 100%, 50%);       /* Color de fondo del botón */
+    color: white;                    /* Color de texto del botón */
+    cursor: pointer;                 /* Cambia el cursor al pasar sobre el botón */
+    border-radius: 4px;              /* Bordes redondeados */
+    transition: background 0.3s;     /* Transición suave al cambiar el color de fondo */
+    display: flex;
+}
+
+/* Efecto hover para el botón de enviar */
+.login2 button:hover {
+    background-color: hsl(211, 100%, 35%); /* Color de fondo cuando el cursor está sobre el botón */
+}
+
+/* Estilos para el enlace "Olvidó su contraseña" */
+.login2 a {
+    text-decoration: none;         /* Elimina el subrayado del enlace */
+    color: #007BFF;                /* Color del enlace */
+    transition: color 0.3s;        /* Transición suave al cambiar el color del texto */
+}
+
+/* Efecto hover para el enlace */
+.login2 a:hover {
+    color: #0056b3; /* Color del texto cuando el cursor está sobre el enlace */
+}
+
+@keyframes rotarVerticalmente {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+#miImagen {
+    animation: rotarVerticalmente 2s linear infinite;
+    transform-origin: center center;
+}
+
+#animacionFondo {
+    transition: opacity 1s ease-out;
+}
+
+

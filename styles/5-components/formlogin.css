@@ -1,5 +1,5 @@
 
-#formlogin > h2 {
+.formlogin > h2 {
     text-align: center;
     font-size: var(--font-2xl);
     font-weight: bold;
@@ -7,7 +7,7 @@
     line-height: var(--leading-8);
 }
 
-#formlogin{
+.formlogin{
     display: flex;
     flex-direction: column;
     gap: 32px;

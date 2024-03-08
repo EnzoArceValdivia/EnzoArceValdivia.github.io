@@ -11,10 +11,10 @@
   gap: var(--spacing-2);
   border: 1px solid transparent;
   border-radius: var(--rounded-md);
-  background-color: var(--primary);
+  background-color:  hsl(211, 100%, 50%);
   cursor: pointer;
   text-decoration: none;
-
+  margin: 5px;
   font-size: var(--font-xl);
   color: var(--primary-foreground);
   line-height: var(--leading-5);
@@ -24,7 +24,7 @@
 }
 
 .button:hover {
-  background-color: var(--primary-hover);
+  background-color:  hsl(211, 100%, 35%);
 }
 
 .button:active {

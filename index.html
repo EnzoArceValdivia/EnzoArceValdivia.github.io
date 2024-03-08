@@ -7,26 +7,26 @@
     <link rel="stylesheet" href="/styles/index.css" />
   </head>
   <body>
-    <div class="modal modal--hidden">
+    <!-- <div class="modal modal--hidden">
       <div class="card">
           <div id="content_closeModal">
               <button id="closeModal">x</button>
           </div>
-          <form id="formlogin">
+          <form id="formlogin" class="formlogin">
               <h2>Ingresa tu Cuenta</h2>
               <div>
                   <label for="inputUser">Usuario</label>
-                  <input type="text" name="user" id="inputUser" placeholder="usuario"/>
+                  <input type="text" name="user" id="inputUser" placeholder="Usuario"/>
               </div>
               <div>
                   <label for="inputPass">Contraseña</label>
-                  <input type="password" name="pass" id="inputPass" />
+                  <input type="password" name="pass" id="inputPass" placeholder="Contraseña"/>
               </div>
   
               <button class="button" type="submit">Login</button>
           </form>
       </div>
-  </div>
+  </div> -->
   
 
     <div class="pancake-stack">
@@ -34,7 +34,7 @@
         <h1 class="header__logo"><a href="/index.html">
           <img width="250" height="60" src="/assets/images/stelalogo.png" alt="Stella"></a></h1>
        
-        <div class="header__actions">
+        <!-- <div class="header__actions">
           <button class="button button--sm" id="btnLogin">Login</button>
         </div>
         <button class="header__menu-icon button button--icon button--outline">
@@ -53,10 +53,41 @@
               stroke-linejoin="round"
             />
           </svg>
-        </button>
+        </button> -->
       </header>
 
-      <main>
+      <div id="animacionFondo" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #000000; z-index: 9999; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+        <img id="miImagen" src="/assets/images/stella_white_logo.png" alt="Logo Stella">
+        <div style="color: white; font-size: 40px;">Programa Edu Compliance</div>
+    </div>
+    
+    <div class="main-login-container">
+        <div class="login-container">
+            <div class="login-container-top">
+            </div>
+            <div class="login-container-bottom">
+              <form id="formlogin" class="login2">
+                <div>
+                    <input type="text" name="user" id="inputUser" placeholder="Usuario"/>
+                </div>
+                <div>
+                    <input type="password" name="pass" id="inputPass" placeholder="Contraseña"/>
+                </div>
+                <button class="button" type="submit">Login</button>
+            </form>
+  
+                <!-- <form id="loginForm">
+                    <input type="text" id="inputUser" placeholder="Usuario">
+                    <input type="password" id="inputPass" placeholder="Contraseña">
+                    <button type="submit" id="ingresar">INGRESAR</button>
+                </form> -->
+            </div>
+        </div>
+        <div class="login-cover"></div>
+    </div>
+    
+
+      <!-- <main>
         <section class="hero2">
           <div class="container2">
             <div class="hero2__content">
@@ -103,7 +134,7 @@
           </div>
         </section>
 
-        <!-- <section class="features2 section-lg">
+         <section class="features2 section-lg">
           <div class="container2">
             <div class="features2__content">
               <div>
@@ -206,8 +237,8 @@
               </ul>
             </div>
           </div>
-        </section> -->
-      </main>
+        </section> 
+      </main> -->
 
       <footer class="container footer">
         <small class="footer__text"
@@ -217,5 +248,6 @@
     </div>
     <script src="/js/modal.js"></script>
     <script src="/js/login.js"></script>
+    <script src="/js/inicio.js"></script>
   </body>
 </html>
