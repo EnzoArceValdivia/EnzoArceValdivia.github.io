@@ -2,15 +2,10 @@
 
 .article {
   max-width: var(--width-7xl);
-  margin-left: 380px;
+  margin-left: 430px;
   margin-right: 30px;
   padding: auto;
   padding-top: 30px;
-
-  background-image: url(/assets/images/elcarmelo.png); 
-    background-size: 300px 600px; 
-    background-position: center; 
-    background-repeat: repeat-y;
 }
 
 .article2 {
@@ -30,4 +25,11 @@
 
 .article h2[id] {
   scroll-margin-top: var(--spacing-24);
+}
+
+.article__carmelo{
+  background-image: url(/assets/images/elcarmelo.png); 
+  background-size: 300px 600px; 
+  background-position: center; 
+  background-repeat: repeat-y;
 }

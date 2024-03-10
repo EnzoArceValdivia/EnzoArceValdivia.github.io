@@ -1,14 +1,14 @@
 // Definir usuarios y contraseñas
 const users = [
     { user: "admin", pass: "pass" },
-    { user: "usuario", pass: "contra" }
+    { user: "carmelocusco", pass: "carmelo2024" }
     // Agrega más usuarios si es necesario
 ];
 
 // Definir usuarios y sus páginas correspondientes
 const userPages = {
-    "admin": "clients/componentes/componentes.html",
-    "usuario": "/clients/componentes/AGLaborar/AGLaborar.html"
+    "admin": "/clients/base/componentes/componentes.html",
+    "carmelocusco": "/clients/y2u8f5r7/componentes/componentes.html"
     // Agrega más usuarios y páginas si es necesario
 };
 

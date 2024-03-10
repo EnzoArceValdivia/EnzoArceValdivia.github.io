@@ -6,7 +6,7 @@
 @media (min-width: 20rem) { 
   .backs-flex{
     display: flex;
-    max-width: 350px;
+    max-width: 400px;
     margin-left: 200px;
     align-items: flex-start; /*Añadi el flex-start para q funcione sticky*/
     justify-content: center;
@@ -22,7 +22,7 @@
     padding: 12px;
     display: block;
     position:fixed; 
-    max-width: 350px;
+    max-width: 400px;
     left: 0;
   }
 }
@@ -100,7 +100,7 @@
 }
 
 .nav__link--inside{
-  border-radius: 6px ;
+  border-radius: 3px ;
   padding-left: 20px;
   text-align: left;
   font-size:medium;
@@ -111,7 +111,7 @@
 }
 
 .list{
-  width: 20rem;
+  width: 23.15rem;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -150,7 +150,7 @@
 }
 
 .list__show{
-  width: 90%;
+  width: 100%;
   margin-left: auto;
   border-left: 2px solid #fefefe;
   list-style: none;

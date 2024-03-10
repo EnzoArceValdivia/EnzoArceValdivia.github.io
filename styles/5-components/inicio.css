@@ -51,6 +51,7 @@
     height: 100vh; /* Ocupa todo el alto de la pantalla */
     margin: 5px;
     align-content: left;
+    
 }
 
 /* Estilo para login-cover */
@@ -72,6 +73,9 @@
     justify-content: center; /* Centra horizontalmente */
     align-items: flex-end;   /* Alinea en la parte inferior */
     padding-bottom: 50px;    /* Espacio en la parte inferior para que no quede pegado al borde */
+    font-size: 30px;
+    font-weight: 600; /* Este valor puede variar dependiendo de la fuente */
+    color: rgb(13, 13, 108);
 }
 
 /* Estilo para login-container-bottom */

@@ -107,11 +107,11 @@ Pancake Layout
   background-color: #0056b3; /* Color de fondo azul más oscuro al pasar el cursor por encima */
 }
 
-
+/*
 #file-manager {
-  /* Estilos para el área de selección de archivos y botones */
+  /* Estilos para el área de selección de archivos y botones
 }
-
+*/
 
 .file-item {
   padding: 10px; 
