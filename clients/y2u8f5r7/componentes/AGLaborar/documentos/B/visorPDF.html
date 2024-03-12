@@ -1,71 +1,3 @@
-<!-- <!DOCTYPE html> -->
-<!-- <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visor de PDF</title>
-    <script src="//mozilla.github.io/pdf.js/build/pdf.mjs" type="module"></script>
-</head>
-<body>
-    <canvas id="the-canvas"></canvas>
-
-    <script type="module">
-        // Obtener el nombre del PDF de la URL
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const pdfName = urlParams.get('pdf');
-
-        // Comprobar si el nombre del PDF está presente en la URL
-        if (pdfName) {
-            // Construir la URL del PDF
-            const pdfUrl = `https://enzoarcevaldivia.github.io/clients/y2u8f5r7/componentes/AGLaborar/documentos/B/${pdfName}`;
-
-            // Obtener la referencia a la librería de pdf.js
-            var { pdfjsLib } = globalThis;
-
-            // Configurar la ruta del archivo worker de pdf.js
-            pdfjsLib.GlobalWorkerOptions.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.mjs';
-
-            // Descargar el PDF de manera asíncrona
-            var loadingTask = pdfjsLib.getDocument(pdfUrl);
-            loadingTask.promise.then(function(pdf) {
-                console.log('PDF cargado');
-
-                // Obtener la primera página del PDF
-                var pageNumber = 1;
-                pdf.getPage(pageNumber).then(function(page) {
-                    console.log('Página cargada');
-
-                    var scale = 1.5; // Escala de la página
-                    var viewport = page.getViewport({scale: scale});
-
-                    // Preparar el canvas utilizando las dimensiones de la página PDF
-                    var canvas = document.getElementById('the-canvas');
-                    var context = canvas.getContext('2d');
-                    canvas.height = viewport.height;
-                    canvas.width = viewport.width;
-
-                    // Renderizar la página PDF en el canvas
-                    var renderContext = {
-                        canvasContext: context,
-                        viewport: viewport
-                    };
-                    var renderTask = page.render(renderContext);
-                    renderTask.promise.then(function () {
-                        console.log('Página renderizada');
-                    });
-                });
-            }, function (reason) {
-                // Manejar errores de carga del PDF
-                console.error(reason);
-            });
-        } else {
-            console.error('No se proporcionó el nombre del PDF.');
-        }
-    </script>
-</body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,7 +6,6 @@
     <title>Visor de PDF</title>
 </head>
 <body>
-    <h1>Visor de PDF</h1>
     <embed id="pdf-embed" src="" type="application/pdf" width="100%" height="100%"></embed>
 
     <script>
