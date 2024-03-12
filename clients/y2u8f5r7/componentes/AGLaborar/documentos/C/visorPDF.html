@@ -1,50 +1,27 @@
 <!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>STELLA / Visor PDF</title>
-    <!-- <link rel="stylesheet" href="/styles/index.css" /> -->
-    <style>
-      html, body {
-          height: 100%;
-          margin: 0;
-          padding: 0;
-      }
-      .pdf-container {
-          height: 100%;
-      }
-      embed {
-          width: 100%;
-          height: 100%;
-      }
-  </style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visor de PDF</title>
 </head>
 <body>
-  <div id="pdfContainer" class="pdf-container"></div>
-  <script>
-      // Obtener la ruta del PDF de la URL
-      const queryString = window.location.search;
-      const urlParams = new URLSearchParams(queryString);
-      const pdfSrc = urlParams.get('pdf');
+    <embed id="pdf-embed" src="" type="application/pdf" width="100%" height="700px"></embed>
 
-      // Función para mostrar el PDF en el contenedor
-      function mostrarPDF(pdfSrc) {
-          // Crear un elemento <embed> para mostrar el PDF
-          var embedElement = document.createElement("embed");
-          embedElement.setAttribute("src", pdfSrc);
-          embedElement.setAttribute("type", "application/pdf");
-          // Ajuste de ancho y altura al 100% para adaptarse a la pantalla
-          embedElement.setAttribute("width", "100%");
-          embedElement.setAttribute("height", "100%");
-          // Limpiar el contenido del contenedor de PDF antes de agregar el nuevo PDF
-          pdfContainer.innerHTML = "";
-          // Agregar el elemento <embed> al contenedor de PDF
-          pdfContainer.appendChild(embedElement);
-      }
+    <script>
+        // Obtener el nombre del PDF de la URL
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const pdfName = urlParams.get('pdf');
 
-      // Mostrar el PDF
-      mostrarPDF(pdfSrc);
-  </script>
+        // Comprobar si el nombre del PDF está presente en la URL
+        if (pdfName) {
+            const pdfUrl = `https://enzoarcevaldivia.github.io/clients/y2u8f5r7/componentes/AGLaborar/documentos/C/${pdfName}`;
+            const embedElement = document.getElementById('pdf-embed');
+            embedElement.src = pdfUrl;
+        } else {
+            console.error('No se proporcionó el nombre del PDF.');
+        }
+    </script>
 </body>
 </html>
