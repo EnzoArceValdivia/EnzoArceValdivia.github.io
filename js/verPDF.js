@@ -16,19 +16,32 @@
 //         });
 //     });
 // });
+///////////////////////////
 
+// document.addEventListener("DOMContentLoaded", function() {
+//     const botonesVisualizarPDF = document.querySelectorAll(".open-pdf");
+
+//     // Agregar eventos a los botones "Visualizar PDF"
+//     botonesVisualizarPDF.forEach(function(boton) {
+//         boton.addEventListener("click", function() {
+//             // Obtener el nombre del PDF asignado al botón actual
+//             var pdfName = this.getAttribute('data-src');
+//             // Construir la URL del visorPDF.html con el nombre del PDF
+//             var visorUrl = `visorPDF.html?pdf=${pdfName}`;
+//             // Abrir el visor del PDF en una nueva pestaña
+//             window.open(visorUrl, '_blank');
+//         });
+//     });
+// });
+//////////////////////////////////////
 
 document.addEventListener("DOMContentLoaded", function() {
     const botonesVisualizarPDF = document.querySelectorAll(".open-pdf");
 
-    // Agregar eventos a los botones "Visualizar PDF"
     botonesVisualizarPDF.forEach(function(boton) {
         boton.addEventListener("click", function() {
-            // Obtener el nombre del PDF asignado al botón actual
             var pdfName = this.getAttribute('data-src');
-            // Construir la URL del visorPDF.html con el nombre del PDF
             var visorUrl = `visorPDF.html?pdf=${pdfName}`;
-            // Abrir el visor del PDF en una nueva pestaña
             window.open(visorUrl, '_blank');
         });
     });
