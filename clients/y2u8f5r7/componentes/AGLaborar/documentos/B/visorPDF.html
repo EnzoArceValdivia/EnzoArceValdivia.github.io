@@ -4,43 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visor de PDF</title>
-    <!-- Agregar enlaces a los archivos de pdf.js y pdf.worker.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
-    <!-- Estilos CSS para el contenedor del visor de PDF -->
-    <style>
-        #pdfContainer {
-            width: 100%;
-            height: 100vh; /* Altura igual al 100% de la altura visible de la ventana */
-        }
-    </style>
+    <script src="//mozilla.github.io/pdf.js/build/pdf.mjs" type="module"></script>
 </head>
 <body>
-    <!-- Contenedor donde se mostrará el PDF -->
-    <div id="pdfContainer"></div>
+    <canvas id="the-canvas"></canvas>
 
-    <script>
-        // Obtener la ruta del PDF de la URL
+    <script type="module">
+        // Obtener el nombre del PDF de la URL
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
-        const pdfSrc = urlParams.get('pdf');
+        const pdfName = urlParams.get('pdf');
 
-        // Función para mostrar el PDF en el contenedor
-        function mostrarPDF(pdfSrc) {
-            // Crear un elemento <embed> para mostrar el PDF
-            var embedElement = document.createElement("embed");
-            embedElement.setAttribute("src", pdfSrc);
-            embedElement.setAttribute("type", "application/pdf");
-            embedElement.setAttribute("width", "100%"); // Ajuste de ancho
-            embedElement.setAttribute("height", "100%"); // Ajuste de altura
-            // Limpiar el contenido del contenedor de PDF antes de agregar el nuevo PDF
-            document.getElementById('pdfContainer').innerHTML = "";
-            // Agregar el elemento <embed> al contenedor de PDF
-            document.getElementById('pdfContainer').appendChild(embedElement);
+        // Comprobar si el nombre del PDF está presente en la URL
+        if (pdfName) {
+            // Construir la URL del PDF
+            const pdfUrl = `https://enzoarcevaldivia.github.io/clients/y2u8f5r7/componentes/AGLaborar/documentos/B/${pdfName}`;
+
+            // Obtener la referencia a la librería de pdf.js
+            var { pdfjsLib } = globalThis;
+
+            // Configurar la ruta del archivo worker de pdf.js
+            pdfjsLib.GlobalWorkerOptions.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.mjs';
+
+            // Descargar el PDF de manera asíncrona
+            var loadingTask = pdfjsLib.getDocument(pdfUrl);
+            loadingTask.promise.then(function(pdf) {
+                console.log('PDF cargado');
+
+                // Obtener la primera página del PDF
+                var pageNumber = 1;
+                pdf.getPage(pageNumber).then(function(page) {
+                    console.log('Página cargada');
+
+                    var scale = 1.5; // Escala de la página
+                    var viewport = page.getViewport({scale: scale});
+
+                    // Preparar el canvas utilizando las dimensiones de la página PDF
+                    var canvas = document.getElementById('the-canvas');
+                    var context = canvas.getContext('2d');
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+
+                    // Renderizar la página PDF en el canvas
+                    var renderContext = {
+                        canvasContext: context,
+                        viewport: viewport
+                    };
+                    var renderTask = page.render(renderContext);
+                    renderTask.promise.then(function () {
+                        console.log('Página renderizada');
+                    });
+                });
+            }, function (reason) {
+                // Manejar errores de carga del PDF
+                console.error(reason);
+            });
+        } else {
+            console.error('No se proporcionó el nombre del PDF.');
         }
-
-        // Mostrar el PDF
-        mostrarPDF(pdfSrc);
     </script>
 </body>
 </html>
-
